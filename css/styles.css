@@ -1,0 +1,1285 @@
+@charset "UTF-8";
+body {
+  margin: 0 auto;
+  background-color: white;
+  font-family: montserrat;
+  color: rgb(27, 27, 27);
+  overflow-x: hidden;
+  cursor: default;
+  position: relative;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Fond */
+body::-webkit-scrollbar-track {
+  position: relative;
+  background-color: rgb(27, 27, 27);
+}
+
+/* Ascenseur */
+body::-webkit-scrollbar-thumb {
+  background: rgba(189, 43, 188, 0.5);
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: rgb(189, 43, 188);
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+/*Angle*/
+body::-webkit-scrollbar-corner {
+  background: rgba(189, 43, 188, 0.5);
+}
+
+/* Boutons */
+body::-webkit-scrollbar-button:single-button {
+  display: block;
+  border-style: solid;
+  height: 20px;
+  width: 16px;
+  background-color: rgb(27, 27, 27);
+}
+
+/* Haut */
+body::-webkit-scrollbar-button:single-button:vertical:decrement {
+  border-width: 0 8px 12px 8px;
+  border-color: transparent transparent transparent transparent;
+}
+
+/* Bas */
+body::-webkit-scrollbar-button:single-button:vertical:increment {
+  border-width: 12px 8px 0 8px;
+  border-color: transparent transparent transparent transparent;
+}
+
+.menu {
+  background-color: rgb(27, 27, 27);
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0 20px;
+  align-items: center;
+  height: 70px;
+  grid-template-rows: repeat(1, 1fr);
+}
+.menu .img {
+  grid-column: 1/2;
+}
+.menu .img img {
+  height: 50px;
+}
+.menu .img #black {
+  display: none;
+}
+.menu .sidenav {
+  grid-column: 2/4;
+}
+.menu .sidenav #contenu nav ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 0;
+}
+.menu .sidenav #contenu nav ul li {
+  list-style-type: none;
+  font-weight: 200;
+  font-size: 18px;
+}
+.menu .sidenav #contenu nav ul #caché {
+  display: none;
+}
+.menu .sidenav #contenu nav ul li::after {
+  content: "";
+  display: block;
+  height: 0.1rem;
+  background: linear-gradient(90deg, rgb(221, 152, 55) 0%, rgb(189, 43, 188) 100%);
+  transform: scale(0);
+  transition: transform 0.4s;
+  transform-origin: right;
+  animation: fade-in 0.4s;
+}
+.menu .sidenav #contenu nav ul li:hover::after {
+  transform: scale(1);
+  transition: transform 0.4s;
+  transform-origin: left;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.menu .sidenav #contenu a {
+  display: none;
+}
+.menu .close {
+  display: none;
+}
+.menu .a {
+  display: flex;
+  justify-content: end;
+  grid-column: 4/5;
+  grid-row: 1/2;
+}
+.menu .a a {
+  text-decoration: none;
+  transition: 0.2s;
+  padding: 10px 15px;
+  border-radius: 22px;
+  background: linear-gradient(90deg, rgb(221, 152, 55) 0%, rgb(189, 43, 188) 100%);
+}
+.menu .a a .text_contact {
+  color: white;
+  transition: 0.2s;
+}
+.menu .a a:hover {
+  transition: 0.2s;
+  background: white;
+}
+.menu .a a:hover span {
+  transition: 0.2s;
+  background: -webkit-linear-gradient(360deg, rgb(221, 152, 55) 0%, rgb(189, 43, 188) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.accueil {
+  height: 91vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
+.accueil .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  padding-left: 13.9vw;
+}
+.accueil .text h1 {
+  font-size: 45px;
+  font-weight: 600;
+  margin: 0;
+}
+.accueil .text p {
+  margin: 0;
+  font-size: 27px;
+  line-height: 36px;
+  margin-top: 10px;
+}
+.accueil .text h4 {
+  border: solid 2px black;
+  padding: 10px 15px;
+  border-radius: 22px;
+  font-size: 11px;
+  width: 107px;
+  transition: 0.2s;
+}
+.accueil .text h4:hover {
+  background: linear-gradient(90deg, rgb(221, 152, 55) 0%, rgb(189, 43, 188) 100%);
+  color: white;
+  border: solid 2px white;
+  transition: 0.2s;
+}
+.accueil .photo {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/moi.jpg);
+  background-size: cover;
+  filter: grayscale(0%);
+  transition: 0.2s;
+  background-position-y: -64px;
+  clip-path: polygon(38% 0, 100% 0, 100% 100%, 0% 100%);
+  width: 833px;
+  background-position-x: 4px;
+  text-decoration: none;
+}
+.accueil .photo p {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 163px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.accueil .photo:hover {
+  filter: grayscale(50%);
+  transition: 0.2s;
+}
+.accueil .photo:hover p {
+  opacity: 1;
+  transition: 0.2s;
+}
+.accueil img {
+  display: none;
+}
+
+.panel {
+  width: 100vw;
+}
+
+.container {
+  overscroll-behavior: none;
+  width: 600%;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.conntainer2 {
+  display: none;
+}
+
+.blanc {
+  display: flex;
+  border-top: solid 1px rgb(27, 27, 27);
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  height: 101vh;
+  position: relative;
+}
+.blanc .separation {
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, rgb(221, 152, 55) 0%, rgb(189, 43, 188) 100%);
+  position: absolute;
+  left: 0;
+}
+.blanc div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  letter-spacing: 18px;
+}
+.blanc div h2 {
+  color: rgb(27, 27, 27);
+  margin: 0 0 10px 0;
+  font-weight: 200;
+  writing-mode: vertical-lr;
+  text-orientation: 90deg;
+  rotate: 180deg;
+  padding-right: 37px;
+}
+.blanc .cadres {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  height: auto;
+  justify-content: space-around;
+  margin-bottom: 50px;
+  margin-left: 162px;
+}
+.blanc .cadres a {
+  height: 527px;
+  border: solid 2px rgb(27, 27, 27);
+  display: grid;
+  justify-content: center;
+  grid-template-rows: repeat(3, 1fr);
+  width: 396px;
+  border-radius: 15px;
+  text-decoration: none;
+  margin-top: 70px;
+  color: rgb(27, 27, 27);
+}
+.blanc .cadres a .aperçu {
+  grid-row: 1/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(27, 27, 27);
+  height: auto;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+}
+.blanc .cadres a .a_a {
+  background-image: url(../images/l_atelier.png);
+  background-position-x: -98px;
+  background-position-y: -41px;
+}
+.blanc .cadres a .a_mo {
+  background-image: url(../images/steam.png);
+  background-size: 339px;
+  background-repeat: no-repeat;
+  background-position-y: 61px;
+  background-position-x: 30px;
+}
+.blanc .cadres a .a_d {
+  background-image: url(../images/dossier_prod.png);
+  background-size: 368px;
+  background-position-y: -133px;
+  background-position-x: 15px;
+}
+.blanc .cadres a div {
+  grid-row: 3/4;
+  color: rgb(27, 27, 27);
+  display: flex;
+  flex-direction: column;
+  letter-spacing: initial;
+  height: 273px;
+  padding: 0 27px;
+  justify-content: space-between;
+}
+.blanc .cadres a div h3 {
+  font-size: 19px;
+  margin-bottom: 0;
+}
+.blanc .cadres a div p {
+  font-size: 15px;
+  margin-bottom: 0;
+  line-height: 23px;
+}
+.blanc .cadres a div h5 {
+  font-size: 11px;
+  border-radius: 22px;
+  text-decoration: none;
+  color: rgb(27, 27, 27);
+  padding: 10px 15px;
+  border: solid 2px rgb(27, 27, 27);
+}
+.blanc .cadres a:hover div h5 {
+  background: linear-gradient(90deg, rgb(221, 152, 55) 0%, rgb(189, 43, 188) 100%);
+  color: white;
+  border: solid 2px white;
+  transition: 0.2s;
+}
+
+.noir {
+  display: flex;
+  position: relative;
+  align-items: center;
+  background-color: rgb(27, 27, 27);
+  height: 101vh;
+}
+.noir .separation {
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, rgb(221, 152, 55) 0%, rgb(189, 43, 188) 100%);
+  position: absolute;
+  left: 0;
+}
+.noir div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  letter-spacing: 18px;
+}
+.noir div h2 {
+  color: white;
+  margin: 0 0 10px 0;
+  font-weight: 200;
+  writing-mode: vertical-lr;
+  text-orientation: 90deg;
+  rotate: 180deg;
+  padding-right: 37px;
+}
+.noir .cadres {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  height: auto;
+  justify-content: space-around;
+  margin-bottom: 50px;
+  margin-left: 162px;
+}
+.noir .cadres a {
+  border: solid 2px white;
+  height: 527px;
+  display: grid;
+  justify-content: center;
+  grid-template-rows: repeat(3, 1fr);
+  width: 396px;
+  border-radius: 15px;
+  text-decoration: none;
+  margin-top: 70px;
+}
+.noir .cadres a .aperçu {
+  grid-row: 1/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  height: auto;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+}
+.noir .cadres a .a_di {
+  background-image: url(../images/dior.png);
+  background-size: 236px;
+  background-repeat: no-repeat;
+  background-position-x: 71px;
+  background-position-y: 76px;
+}
+.noir .cadres a .a_m {
+  background-image: url(../images/musicdiscover.png);
+  background-size: 310px;
+  background-position-x: 41px;
+  background-position-y: 107px;
+  background-repeat: no-repeat;
+}
+.noir .cadres a div {
+  grid-row: 3/4;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: initial;
+  height: 273px;
+  padding: 0 27px;
+  justify-content: space-between;
+}
+.noir .cadres a div h3 {
+  font-size: 19px;
+  margin-bottom: 0;
+}
+.noir .cadres a div p {
+  font-size: 15px;
+  margin-bottom: 0;
+  line-height: 23px;
+}
+.noir .cadres a div h5 {
+  font-size: 11px;
+  border-radius: 22px;
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  border: solid 2px white;
+}
+.noir .cadres a:hover div h5 {
+  background: linear-gradient(90deg, rgb(221, 152, 55) 0%, rgb(189, 43, 188) 100%);
+  color: white;
+  border: solid 2px rgb(27, 27, 27);
+  transition: 0.2s;
+}
+
+.moi {
+  background-image: url(../images/fond2.png);
+  background-size: 856px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(27, 27, 27);
+  padding-bottom: 50px;
+}
+.moi h1 {
+  color: rgb(255, 255, 255);
+  margin: 10px 0;
+  font-weight: 300;
+  padding-right: 37px;
+  box-shadow: 1px 8px 8px -1px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 1px 8px 8px -1px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 1px 8px 8px -1px rgba(0, 0, 0, 0.6);
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 62px;
+  height: 227px;
+  width: 100%;
+  margin-bottom: 50px;
+  background-color: rgb(27, 27, 27);
+}
+.moi div {
+  box-shadow: 1px 8px 8px -1px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 1px 8px 8px -1px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 1px 8px 8px -1px rgba(0, 0, 0, 0.6);
+  width: 40%;
+  color: rgb(27, 27, 27);
+  border-radius: 22px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 50px 0;
+  background-color: rgb(255, 255, 255);
+}
+.moi div h2 {
+  margin: 15px 0 0 0;
+  font-size: 35px;
+  font-weight: 500;
+}
+.moi div p {
+  font-size: 16px;
+  padding-left: 23px;
+  font-weight: 500;
+}
+.moi div p span {
+  color: rgb(221, 152, 55);
+}
+.moi div ul {
+  display: flex;
+  flex-direction: column;
+  height: 71px;
+  justify-content: space-between;
+  font-weight: 500;
+}
+.moi div ul li span {
+  color: rgb(221, 152, 55);
+}
+
+#contact {
+  padding: 45px 0;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(90deg, rgb(221, 152, 55) 0%, rgb(189, 43, 188) 100%);
+}
+#contact h2 {
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+#contact a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border: solid 2px white;
+  border-radius: 25px;
+  transition: 0.2s;
+  font-size: 18px;
+}
+#contact a:hover {
+  transition: 0.2s;
+  background-color: white;
+  font-weight: 600;
+}
+#contact a:hover span {
+  background: -webkit-linear-gradient(360deg, rgb(221, 152, 55) 0%, rgb(189, 43, 188) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+footer {
+  background-color: rgb(27, 27, 27);
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: center;
+  height: 115px;
+}
+footer p {
+  margin: 0;
+  padding: 15px;
+  font-size: 12px;
+  grid-row: 2/3;
+  grid-column: 2/4;
+  text-align: center;
+}
+footer div {
+  grid-column: 4/5;
+  grid-row: 1/3;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+footer div span {
+  color: rgb(27, 27, 27);
+  font-weight: 700;
+}
+footer .menu {
+  grid-column: 2/4;
+  grid-row: 1/2;
+  display: flex;
+  padding: 0;
+}
+footer .menu ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+footer .menu ul li {
+  font-size: 13px;
+  list-style-type: none;
+}
+footer .menu ul li::after {
+  content: "";
+  display: block;
+  height: 0.1rem;
+  background: white;
+  transform: scale(0);
+  transition: transform 0.4s;
+  transform-origin: right;
+  animation: fade-in 0.4s;
+}
+footer .menu ul li:hover::after {
+  transform: scale(1);
+  transition: transform 0.4s;
+  transform-origin: left;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+footer #fleche {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+footer #fleche span {
+  font-size: 55px;
+  color: white;
+  margin-right: 50px;
+}
+footer #reseaux {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  width: 39%;
+  margin-left: 59px;
+}
+footer #reseaux div a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer #reseaux div a img {
+  height: 30px;
+  rotate: none;
+}
+footer #reseaux div a .i1 {
+  transition: 0.3s;
+  opacity: 1;
+}
+footer #reseaux div a .i2 {
+  transition: 0.3s;
+  opacity: 0;
+  position: absolute;
+}
+footer #reseaux div:hover a .i1 {
+  transition: 0.3s;
+  opacity: 0;
+}
+footer #reseaux div:hover a .i2 {
+  transition: 0.3s;
+  opacity: 1;
+}
+footer #reseaux #in {
+  grid-column: 1/2;
+}
+footer #reseaux #be {
+  grid-column: 2/3;
+}
+footer #reseaux #cv {
+  grid-column: 3/4;
+}
+
+/*--------------------------------petit--------------------------------*/
+@media (max-width: 1339px) {
+  .cursor {
+    display: none;
+  }
+  .menu {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .accueil {
+    position: relative;
+  }
+  .accueil .text {
+    width: 374px;
+    padding-left: 8.9vw;
+  }
+  .accueil .text h1 {
+    font-size: 40px;
+  }
+  .accueil .text p {
+    font-size: 23px;
+  }
+  .accueil .text h4 {
+    border: solid 2px black;
+    padding: 10px 15px;
+    border-radius: 22px;
+    font-size: 11px;
+    width: 107px;
+    transition: 0.2s;
+  }
+  .accueil .text h4:hover {
+    background: linear-gradient(90deg, rgb(221, 152, 55) 0%, rgb(189, 43, 188) 100%);
+    color: white;
+    border: solid 2px white;
+    transition: 0.2s;
+  }
+  .accueil .photo {
+    position: absolute;
+    top: 0;
+    right: -337px;
+    height: 100%;
+    background-position-x: -21px;
+  }
+  .accueil .photo p {
+    padding-left: 20px;
+  }
+  .accueil .photo:hover {
+    filter: grayscale(50%);
+    transition: 0.2s;
+  }
+  .accueil .photo:hover p {
+    opacity: 1;
+    transition: 0.2s;
+  }
+}
+/*--------------------------------téléphone--------------------------------*/
+@media (max-width: 639px) {
+  /* Sidenav menu */
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  .container {
+    display: block;
+    width: 100%;
+  }
+  body {
+    width: 100vw;
+  }
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 11vh;
+    background: rgb(27, 27, 27);
+  }
+  .menu .img {
+    grid-column: 1/2;
+  }
+  .menu #openBtn .burger-icon span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: rgb(255, 255, 255);
+    margin: 6px 0;
+    border-radius: 12px;
+  }
+  .menu .sidenav {
+    height: 100%;
+    width: 78%;
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    left: 178%;
+    background-color: rgb(255, 255, 255);
+    padding-top: 60px;
+    transition: left 0.5s ease;
+    color: rgb(27, 27, 27);
+  }
+  .menu .sidenav .close {
+    position: absolute;
+    top: -6px;
+    right: 25px;
+    font-size: 72px;
+    color: rgb(27, 27, 27);
+    text-decoration: none;
+    display: block;
+    font-weight: 100;
+  }
+  .menu .sidenav #contenu {
+    height: 87%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .menu .sidenav #contenu nav {
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 45px;
+  }
+  .menu .sidenav #contenu nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: contents;
+  }
+  .menu .sidenav #contenu nav ul li {
+    padding: 42px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 21px;
+    color: rgb(27, 27, 27);
+    font-weight: 500;
+    display: block;
+    transition: 0.3s;
+    width: fit-content;
+  }
+  .menu .sidenav #contenu nav ul a {
+    display: block;
+  }
+  .menu .sidenav #contenu nav ul #caché {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 70px 0 0 0;
+  }
+  .menu .sidenav #contenu nav ul #caché a {
+    padding: 0;
+  }
+  .menu .sidenav #contenu nav ul #caché a span {
+    font-size: 17px;
+    text-decoration: none;
+    transition: 0.2s;
+    padding: 7px 12px;
+    border-radius: 22px;
+    background: linear-gradient(90deg, rgb(221, 152, 55) 0%, rgb(189, 43, 188) 100%);
+    color: white;
+    transition: 0.2s;
+  }
+  .menu .sidenav #contenu nav ul li:hover:after {
+    transform: scale(1);
+    transition: transform 0.4s;
+    transform-origin: left;
+  }
+  .menu .sidenav #contenu nav ul li:after {
+    content: "";
+    display: block;
+    height: 0.1rem;
+    background: linear-gradient(90deg, rgb(221, 152, 55) 0%, rgb(189, 43, 188) 100%);
+    transform: scale(0);
+    transition: transform 0.4s;
+    transform-origin: right;
+    animation: fade-in 0.4s;
+  }
+  .menu .sidenav #contenu a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    color: white;
+    display: block;
+  }
+  .menu .sidenav #contenu #cv {
+    grid-row: 2/3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  .menu .sidenav #contenu #cv span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 21px;
+    height: 35%;
+    width: 100%;
+    background: linear-gradient(90deg, rgb(221, 152, 55) 0%, rgb(189, 43, 188) 100%);
+  }
+  .menu .sidenav #contenu #caché {
+    grid: 3/4;
+    width: 100%;
+    font-size: 20px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu .sidenav #contenu #caché span {
+    border-radius: 22px;
+    border: solid 1px rgb(27, 27, 27);
+    padding: 8px 14px;
+    color: rgb(27, 27, 27);
+  }
+  .menu .a {
+    display: none;
+  }
+  .sidenav.active {
+    left: 22%;
+  }
+  .accueil {
+    height: 85vh;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+  }
+  .accueil .text {
+    color: black;
+    justify-content: center;
+    padding-left: 32px;
+    grid-row: 3/4;
+    width: fit-content;
+    height: 100%;
+  }
+  .accueil .text h1 {
+    font-size: 34px;
+  }
+  .accueil .text p {
+    margin-top: 12px;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .accueil .text h4 {
+    font-size: 15px;
+    width: 145px;
+    color: white;
+    padding: 13px 15px;
+    border: solid 1px rgb(255, 255, 255);
+    background: linear-gradient(90deg, rgb(221, 152, 55) 0%, rgb(189, 43, 188) 100%);
+    margin-bottom: 5px;
+    border-radius: 40px;
+  }
+  .accueil .photo {
+    display: none;
+  }
+  .accueil #fond {
+    background-image: url(../images/moi.jpg);
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    height: 67%;
+    background-size: 568px;
+    background-position-x: -98px;
+    background-position-y: -44px;
+  }
+  .blanc {
+    display: flex;
+    border-top: none;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    flex-direction: column;
+    position: relative;
+  }
+  .blanc .separation {
+    display: none;
+  }
+  .blanc #titre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 8px;
+    width: 100%;
+    margin-top: 50px;
+  }
+  .blanc #titre h2 {
+    color: rgb(27, 27, 27);
+    margin: 10px 0;
+    font-weight: 400;
+    padding-right: 0;
+    writing-mode: horizontal-tb;
+    rotate: none;
+    font-size: 34px;
+    padding-left: 7px;
+  }
+  .blanc iframe {
+    margin-top: 70px;
+  }
+  .blanc .cadres {
+    display: flex;
+    flex-wrap: wrap;
+    width: 323px;
+    height: auto;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    margin-left: 0;
+  }
+  .blanc .cadres a {
+    height: 537px;
+    border: solid 2px rgb(27, 27, 27);
+    display: grid;
+    justify-content: center;
+    grid-template-rows: repeat(3, 1fr);
+    width: 333px;
+    border-radius: 15px;
+    text-decoration: none;
+    margin-top: 70px;
+    width: auto;
+  }
+  .blanc .cadres a .aperçu {
+    grid-row: 1/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(27, 27, 27);
+    height: auto;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+  }
+  .blanc .cadres a .a_a {
+    background-position-x: -55px;
+    background-position-y: -11px;
+    background-size: 446px;
+    background-image: url(../images/l_atelier.png);
+  }
+  .blanc .cadres a .a_mo {
+    background-image: url(../images/steam.png);
+    background-repeat: no-repeat;
+    background-position-y: 58px;
+    background-size: 261px;
+    background-position-x: 30px;
+  }
+  .blanc .cadres a .a_d {
+    background-image: url(../images/dossier_prod.png);
+    background-size: 294px;
+    background-position-y: -97px;
+    background-position-x: 12px;
+  }
+  .blanc .cadres a div {
+    grid-row: 3/4;
+    color: rgb(27, 27, 27);
+    display: flex;
+    flex-direction: column;
+    letter-spacing: initial;
+    height: 315px;
+    padding: 0 20px;
+  }
+  .blanc .cadres a div h3 {
+    margin-bottom: 0;
+  }
+  .blanc .cadres a div p {
+    margin-bottom: 0;
+    font-weight: 500;
+  }
+  .blanc .cadres a div h5 {
+    border-radius: 22px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 15px;
+    font-size: 13px;
+    border: solid 2px rgb(255, 255, 255);
+    background: linear-gradient(90deg, rgb(221, 152, 55) 0%, rgb(189, 43, 188) 100%);
+  }
+  .noir {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    background-color: rgb(27, 27, 27);
+    height: auto;
+  }
+  .noir .separation {
+    display: none;
+  }
+  .noir #titre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 8px;
+    width: 100%;
+    margin-top: 50px;
+  }
+  .noir #titre h2 {
+    color: white;
+    margin: 10px 0;
+    font-weight: 400;
+    padding-right: 0;
+    writing-mode: horizontal-tb;
+    rotate: none;
+    font-size: 34px;
+    padding-left: 7px;
+  }
+  .noir .cadres {
+    display: flex;
+    flex-wrap: wrap;
+    width: 323px;
+    height: auto;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    margin-left: 0;
+  }
+  .noir .cadres a {
+    height: 537px;
+    border: solid 2px white;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: repeat(3, 1fr);
+    border-radius: 15px;
+    text-decoration: none;
+    margin-top: 70px;
+    width: auto;
+  }
+  .noir .cadres a .aperçu {
+    grid-row: 1/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    height: auto;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+  }
+  .noir .cadres a .a_di {
+    background-image: url(../images/dior.png);
+    background-size: 167px;
+    background-repeat: no-repeat;
+    background-position-x: 72px;
+    background-position-y: 73px;
+  }
+  .noir .cadres a .a_m {
+    background-image: url(../images/musicdiscover.png);
+    background-size: 220px;
+    background-position-x: 51px;
+    background-position-y: 93px;
+    background-repeat: no-repeat;
+  }
+  .noir .cadres a div {
+    grid-row: 3/4;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: initial;
+    height: 315px;
+    padding: 0 20px;
+  }
+  .noir .cadres a div h3 {
+    margin-bottom: 0;
+  }
+  .noir .cadres a div p {
+    margin-bottom: 0;
+    font-weight: 500;
+  }
+  .noir .cadres a div h5 {
+    border-radius: 22px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 15px;
+    font-size: 13px;
+    border: solid 2px rgb(27, 27, 27);
+    background: linear-gradient(90deg, rgb(221, 152, 55) 0%, rgb(189, 43, 188) 100%);
+  }
+  .moi {
+    background-size: 416px;
+    width: 100%;
+    background-position-y: 61px;
+  }
+  .moi h1 {
+    padding: 0;
+    font-size: 40px;
+    height: 75px;
+    margin: 0;
+    margin-bottom: 50px;
+    padding: 46px 0;
+  }
+  .moi div {
+    border-radius: 0;
+    width: 261px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(27, 27, 27);
+    padding: 17px 21px;
+    border-radius: 12px;
+  }
+  .moi div h2 {
+    margin: 15px 0 0 0;
+    font-size: 29px;
+    font-weight: 500;
+  }
+  .moi div p {
+    font-size: 17px;
+    padding-left: 20px;
+    font-weight: 400;
+  }
+  .moi div p span {
+    color: rgb(221, 152, 55);
+  }
+  .moi div ul {
+    padding-left: 14px;
+    margin: 15px 0;
+    height: auto;
+  }
+  .moi div ul li {
+    font-size: 17px;
+    font-weight: 400;
+  }
+  .moi div ul li span {
+    color: rgb(221, 152, 55);
+  }
+  footer {
+    height: 414px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  footer .menu {
+    display: flex;
+    width: 100vw;
+    height: auto;
+  }
+  footer .menu ul {
+    display: block;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+  }
+  footer .menu ul li {
+    padding: 24px 0;
+    text-align: center;
+    border-bottom: solid 1px rgb(93, 93, 93);
+    width: 100%;
+    font-size: 15px;
+  }
+  footer .menu ul li:after {
+    display: none;
+  }
+  footer #fleche {
+    display: none;
+  }
+  footer #reseaux {
+    width: 49%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    right: -108px;
+    padding: 36px 0;
+  }
+  footer #reseaux div {
+    display: flex;
+    padding: 0;
+  }
+  footer #reseaux div a img {
+    height: 43px;
+  }
+  footer #reseaux div a .i2 {
+    display: none;
+  }
+  footer #reseaux div:hover a .i1 {
+    transition: 0.3s;
+    opacity: 1;
+  }
+  footer p {
+    font-size: 12px;
+    padding: 0;
+  }
+  #fleche {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.2784313725);
+    height: 33px;
+    width: 33px !important;
+  }
+  #fleche span {
+    font-size: 35px !important;
+    margin-right: 0 !important;
+    color: rgb(27, 27, 27) !important;
+  }
+  .fixed {
+    display: block !important;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
